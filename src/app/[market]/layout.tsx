@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
-import { isMarketCode, marketCodes } from "@/lib/market";
+import { CartHydrator } from "@/components/cart-hydrator";
+import { Header } from "@/components/header";
+import { isMarketCode, marketCodes, markets } from "@/lib/market";
 
 export const dynamicParams = false;
 
@@ -14,8 +16,22 @@ export default async function MarketLayout({
   children: React.ReactNode;
   params: Promise<{ market: string }>;
 }) {
-  const { market } = await params;
-  if (!isMarketCode(market)) notFound();
+  const { market: code } = await params;
+  if (!isMarketCode(code)) notFound();
 
-  return <>{children}</>;
+  return (
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-indigo-700"
+      >
+        Skip to content
+      </a>
+      <CartHydrator />
+      <Header market={markets[code]} />
+      <main id="main" className="mx-auto max-w-7xl px-4 py-8">
+        {children}
+      </main>
+    </>
+  );
 }
