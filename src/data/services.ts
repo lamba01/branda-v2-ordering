@@ -1,8 +1,9 @@
 import type { Service } from "@/types";
+import { moreServices } from "./more-services";
 
 const img = (seed: string) => `https://picsum.photos/seed/${seed}/800/600`;
 
-export const services: Service[] = [
+const baseServices: Service[] = [
   {
     slug: "logo-design",
     name: "Logo Design",
@@ -167,3 +168,5 @@ export const services: Service[] = [
     relatedSlugs: ["branded-mugs", "event-backdrops", "logo-design"],
   },
 ];
+
+export const services: Service[] = [...baseServices, ...moreServices];

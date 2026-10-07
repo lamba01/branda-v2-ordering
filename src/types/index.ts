@@ -56,3 +56,23 @@ export interface CartItem {
   quantity: number;
   selectedOptions: Record<string, string>;
 }
+
+export type SortOption = "popular" | "price-asc" | "price-desc";
+export type Urgency = "fast" | "standard" | "extended";
+
+export interface ServiceFilters {
+  q?: string;
+  category?: CategorySlug;
+  useCase?: Service["useCase"];
+  industry?: Service["industry"];
+  urgency?: Urgency;
+  sort: SortOption;
+  page: number;
+}
+
+export interface PaginatedServices {
+  items: Service[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
