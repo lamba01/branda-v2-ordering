@@ -13,11 +13,11 @@ export function CartLink({ market }: { market: MarketCode }) {
     <Link
       href={`/${market}/cart`}
       aria-label={`Cart, ${count} ${count === 1 ? "item" : "items"}`}
-      className="relative rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-indigo-600"
+      className="relative rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-white"
     >
       Cart
       {count > 0 && (
-        <span className="ml-2 rounded-full bg-indigo-600 px-2 py-0.5 text-xs font-semibold text-white">
+        <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-indigo-900">
           {count}
         </span>
       )}

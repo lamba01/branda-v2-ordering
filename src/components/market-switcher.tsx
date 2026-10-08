@@ -26,7 +26,7 @@ export function MarketSwitcher({ current }: { current: MarketCode }) {
         id="market-select"
         value={current}
         onChange={handleChange}
-        className="rounded-md border border-slate-300 bg-white px-2 py-2 text-sm text-slate-900 focus-visible:outline-2 focus-visible:outline-indigo-600"
+        className="rounded-md border border-slate-300 cursor-pointer bg-white px-2 py-2 text-sm text-slate-900 focus-visible:outline-2 focus-visible:outline-indigo-600"
       >
         {marketCodes.map((code) => (
           <option key={code} value={code}>

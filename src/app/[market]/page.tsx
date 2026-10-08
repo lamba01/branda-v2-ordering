@@ -6,6 +6,8 @@ import { CATEGORY_SLUGS, categoryLabels } from "@/lib/constants";
 import { isMarketCode, marketCodes, markets } from "@/lib/market";
 import { getServicesBySlugs } from "@/lib/services";
 import type { CategorySlug } from "@/types";
+import Image from "next/image";
+import heroImage from "@/assets/hero-ng.jpg";
 
 type Props = { params: Promise<{ market: string }> };
 
@@ -58,33 +60,49 @@ export default async function MarketHome({ params }: Props) {
     <div className="space-y-16">
       <section
         aria-labelledby="hero-heading"
-        className="rounded-2xl bg-linear-to-br from-indigo-800 to-indigo-600 px-6 py-14 text-white sm:px-12 sm:py-20"
+        className="relative isolate overflow-hidden rounded-2xl bg-indigo-900 text-white"
       >
-        <p className="text-sm font-semibold uppercase tracking-wide text-indigo-100">
-          Branda {market.name}
-        </p>
-        <h1
-          id="hero-heading"
-          className="mt-3 max-w-2xl text-3xl font-bold sm:text-5xl"
-        >
-          {market.hero.title}
-        </h1>
-        <p className="mt-4 max-w-xl text-lg text-indigo-50">
-          {market.hero.subtitle}
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href={`/${code}/services`}
-            className="rounded-md bg-white px-5 py-3 text-sm font-semibold text-indigo-800 hover:bg-indigo-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        <Image
+          src={heroImage}
+          alt=""
+          fill
+          priority
+          placeholder="blur"
+          sizes="(min-width: 1280px) 1280px, 100vw"
+          className="object-cover"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-linear-to-r from-slate-950/85 via-slate-950/60 to-slate-950/10"
+        />
+
+        <div className="relative px-6 py-14 sm:px-12 sm:py-24">
+          <p className="text-sm font-semibold uppercase tracking-wide text-indigo-100">
+            Branda {market.name}
+          </p>
+          <h1
+            id="hero-heading"
+            className="mt-3 max-w-2xl text-3xl font-bold sm:text-5xl"
           >
-            Browse all services
-          </Link>
-          <Link
-            href={`/${code}/services?sort=price-asc`}
-            className="rounded-md border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            See lowest prices
-          </Link>
+            {market.hero.title}
+          </h1>
+          <p className="mt-4 max-w-xl text-lg text-slate-100">
+            {market.hero.subtitle}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href={`/${code}/services`}
+              className="rounded-md bg-white px-5 py-3 text-sm font-semibold text-indigo-800 hover:bg-indigo-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Browse all services
+            </Link>
+            <Link
+              href={`/${code}/services?sort=price-asc`}
+              className="rounded-md border border-white px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              See lowest prices
+            </Link>
+          </div>
         </div>
       </section>
 
