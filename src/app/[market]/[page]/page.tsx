@@ -66,7 +66,7 @@ export default async function InfoPage({ params }: Props) {
   const content = pages[page];
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6">
+    <div className="mx-auto max-w-2xl h-1/2 space-y-6">
       <h1 className="text-3xl font-bold text-slate-900">{content.title}</h1>
       <p className="text-lg text-slate-700">{content.intro}</p>
       <ul className="list-disc space-y-2 pl-5 text-slate-700">

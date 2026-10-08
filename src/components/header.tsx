@@ -21,7 +21,7 @@ export function Header({ market }: { market: Market }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative z-40 bg-indigo-900 text-white shadow-md md:sticky md:top-0">
+    <header className=" z-40 bg-indigo-900 text-white shadow-md sticky top-0">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2">
         <Link
           href={`/${market.code}`}
@@ -71,7 +71,7 @@ export function Header({ market }: { market: Market }) {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="absolute inset-x-0 top-full border-t border-white/10 bg-indigo-900 shadow-lg md:hidden"
+          className="absolute inset-x-0 top-full border-t border-white/10 bg-indigo-900 shadow-lg md:hidden pb-3 sm:pb-0"
         >
           <ul className="space-y-1 px-4 py-3">
             {links.map((l) => (
