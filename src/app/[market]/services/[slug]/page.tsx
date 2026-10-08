@@ -188,7 +188,11 @@ export default async function ServiceDetailPage({ params }: Props) {
             {related.map((item) => (
               <li key={item.slug} className="flex">
                 <div className="flex w-full">
-                  <ServiceCard service={item} market={market} />
+                  <ServiceCard
+                    service={item}
+                    market={market}
+                    headingLevel={3}
+                  />
                 </div>
               </li>
             ))}

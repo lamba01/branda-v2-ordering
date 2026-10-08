@@ -9,11 +9,14 @@ export function ServiceCard({
   service,
   market,
   priority = false,
+  headingLevel = 2,
 }: {
   service: Service;
   market: Market;
   priority?: boolean;
+  headingLevel?: 2 | 3;
 }) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   const finalPrice = getFinalPrice(service);
 
   return (
@@ -38,9 +41,9 @@ export function ServiceCard({
         <p className="text-xs font-semibold uppercase tracking-wide text-indigo-700">
           {categoryLabels[service.category]}
         </p>
-        <h2 className="mt-1 text-lg font-semibold text-slate-900">
+        <Heading className="mt-1 text-lg font-semibold text-slate-900">
           {service.name}
-        </h2>
+        </Heading>
         <p className="mt-1 line-clamp-2 text-sm text-slate-600">
           {service.description}
         </p>

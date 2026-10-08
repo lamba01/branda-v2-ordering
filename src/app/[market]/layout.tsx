@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { CartHydrator } from "@/components/cart-hydrator";
 import { Header } from "@/components/header";
 import { isMarketCode, marketCodes, markets } from "@/lib/market";
+import { Footer } from "@/components/footer";
 
 export const dynamicParams = false;
 
@@ -32,6 +33,7 @@ export default async function MarketLayout({
       <main id="main" className="mx-auto max-w-7xl px-4 py-8">
         {children}
       </main>
+      <Footer current={code} />
     </>
   );
 }
