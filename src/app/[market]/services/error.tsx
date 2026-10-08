@@ -1,6 +1,6 @@
 "use client";
 
-export default function ServicesError({
+export default function ServiceError({
   reset,
 }: {
   error: Error;
@@ -12,11 +12,9 @@ export default function ServicesError({
       className="rounded-xl border border-rose-200 bg-rose-50 p-8 text-center"
     >
       <h2 className="text-lg font-semibold text-rose-900">
-        Something went wrong
+        We couldn&apos;t load this service
       </h2>
-      <p className="mt-1 text-rose-800">
-        We couldn&apos;t load the services. Please try again.
-      </p>
+      <p className="mt-1 text-rose-800">Please try again in a moment.</p>
       <button
         type="button"
         onClick={reset}

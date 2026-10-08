@@ -1,4 +1,5 @@
 import { services } from "@/data/services";
+import { getFinalPrice } from "@/lib/pricing";
 import type {
   CategorySlug,
   PaginatedServices,
@@ -30,12 +31,13 @@ export const categoryLabels: Record<CategorySlug, string> = {
   prints: "Prints",
 };
 
-/** Price in base USD after any discount */
-export function getFinalPrice(service: Service): number {
-  return service.discountPercent
-    ? service.basePrice * (1 - service.discountPercent / 100)
-    : service.basePrice;
-}
+// /** Price in base USD after any discount */
+// export function getFinalPrice(service: Service): number {
+//   return service.discountPercent
+//     ? service.basePrice * (1 - service.discountPercent / 100)
+//     : service.basePrice;
+// }
+export { getFinalPrice };
 
 // Returns the value only if it is one of the allowed options, otherwise undefined
 function oneOf<T extends string>(
