@@ -15,7 +15,7 @@ const links = [
 ];
 
 const linkClass =
-  "block rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-white";
+  "block rounded-md px-3 py-2 text-sm font-medium text-neutral-300 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-white";
 
 export function Header({ market }: { market: Market }) {
   const [open, setOpen] = useState(false);

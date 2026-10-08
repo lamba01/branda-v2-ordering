@@ -60,7 +60,7 @@ export default async function MarketHome({ params }: Props) {
     <div className="space-y-16">
       <section
         aria-labelledby="hero-heading"
-        className="relative isolate overflow-hidden rounded-2xl bg-indigo-900 text-white"
+        className="relative isolate h-[90vh] sm:h-[80vh] overflow-hidden rounded-2xl bg-indigo-900 text-white"
       >
         <Image
           src={heroImage}
@@ -76,7 +76,7 @@ export default async function MarketHome({ params }: Props) {
           className="absolute inset-0 bg-linear-to-r from-slate-950/85 via-slate-950/60 to-slate-950/10"
         />
 
-        <div className="relative px-6 py-14 sm:px-12 sm:py-24">
+        <div className="absolute inset-0 flex flex-col justify-center px-6 pb-10 pt-14 sm:relative sm:inset-auto sm:block sm:px-12 sm:py-24">
           <p className="text-sm font-semibold uppercase tracking-wide text-indigo-100">
             Branda {market.name}
           </p>

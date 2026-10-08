@@ -75,7 +75,7 @@ export function CheckoutView({ market }: { market: Market }) {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
+      <div className="rounded-xl w-[95vw] border border-dashed border-slate-300 bg-white p-10 text-center">
         <h2 className="text-lg font-semibold text-slate-900">
           Nothing to check out yet
         </h2>
@@ -93,7 +93,7 @@ export function CheckoutView({ market }: { market: Market }) {
   const hasErrors = Boolean(errors.name || errors.email);
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2">
+    <div className="grid gap-8 lg:grid-cols-2 w-[95vw]">
       <form onSubmit={handleSubmit} noValidate className="space-y-5">
         <h2 className="text-lg font-semibold text-slate-900">Your details</h2>
 
@@ -160,7 +160,7 @@ export function CheckoutView({ market }: { market: Market }) {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-indigo-700 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
+          className="w-full cursor-pointer rounded-md bg-indigo-700 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
         >
           Confirm order
         </button>

@@ -9,7 +9,7 @@ import { useCart } from "@/store/cart";
 import type { Market } from "@/types";
 
 const stepButton =
-  "px-3 py-1.5 text-lg text-slate-800 hover:bg-slate-100 disabled:text-slate-400 focus-visible:outline-2 focus-visible:outline-indigo-700";
+  "px-3 py-1.5 text-lg cursor-pointer text-slate-800 hover:bg-slate-100 disabled:text-slate-400 focus-visible:outline-2 focus-visible:outline-indigo-700";
 
 export function CartView({ market }: { market: Market }) {
   const hydrated = useCartHydrated();
@@ -31,7 +31,20 @@ export function CartView({ market }: { market: Market }) {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
+      <div className="w-[95vw] border border-dashed border-slate-300  p-10 text-center items-center">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+          className="text-neutral-300 mb-6 mx-auto"
+        >
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
         <h2 className="text-lg font-semibold text-slate-900">
           Your cart is empty
         </h2>
@@ -49,7 +62,7 @@ export function CartView({ market }: { market: Market }) {
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-3">
+    <div className="grid gap-8 lg:grid-cols-3 w-[95vw]">
       <ul className="space-y-4 lg:col-span-2">
         {items.map((item) => (
           <li
@@ -120,7 +133,7 @@ export function CartView({ market }: { market: Market }) {
                   <button
                     type="button"
                     onClick={() => removeItem(item.key)}
-                    className="text-sm font-medium text-rose-700 underline underline-offset-2 hover:text-rose-900 focus-visible:outline-2 focus-visible:outline-rose-700"
+                    className="text-sm font-medium text-rose-700 underline cursor-pointer underline-offset-2 hover:text-rose-900 focus-visible:outline-2 focus-visible:outline-rose-700"
                   >
                     Remove<span className="sr-only"> {item.name}</span>
                   </button>

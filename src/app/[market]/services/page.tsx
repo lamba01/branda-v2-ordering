@@ -40,7 +40,7 @@ export default async function ServicesPage({ params, searchParams }: Props) {
   const result = await getServices(filters);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-full">
       <h1 className="text-3xl font-bold text-slate-900">Branding services</h1>
 
       <nav aria-label="Categories">
@@ -79,7 +79,7 @@ export default async function ServicesPage({ params, searchParams }: Props) {
       </p>
 
       {result.items.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-slate-300 bg-white p-10 text-center">
+        <div className="rounded-xl w-full sm:w-[96vw] border border-dashed border-slate-300 bg-white p-10 text-center">
           <h2 className="text-lg font-semibold text-slate-900">
             No services match your search
           </h2>

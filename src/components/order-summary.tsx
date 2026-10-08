@@ -17,7 +17,7 @@ export function OrderSummary({
   return (
     <section
       aria-labelledby="summary-heading"
-      className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+      className="rounded-xl w-full border border-slate-200 bg-white p-5 shadow-sm"
     >
       <h2 id="summary-heading" className="text-lg font-semibold text-slate-900">
         Order summary
